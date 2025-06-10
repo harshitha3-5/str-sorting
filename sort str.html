@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Only Letters Alphabetically</title>
+</head>
+<body>
+  <h2> string with <strong>only letters</strong> in alphabetical order</h2>
+  <label>Enter a string:</label>
+  <input type="text" id="strInput">
+  <button onclick="sortString()">Sort</button>
+  <p id="output2"></p>
+
+  <script>
+    function sortString() {
+      let str = document.getElementById("strInput").value;
+      // Remove all non-letter characters using regex
+      let lettersOnly = str.replace(/[^a-zA-Z]/g, '');
+      let sorted = lettersOnly.split('').sort().join('');
+      document.getElementById("output2").innerText = "Expected Output: '" + sorted + "'";
+    }
+  </script>
+</body>
+</html>
